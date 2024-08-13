@@ -1,21 +1,23 @@
 from enum import Enum
 
+# Vehicle class representing a vehicle with various attributes
 class Vehicle:
     def __init__(self, ID: int, Manufacturer: 'Manufacturer', Model: str, HorsePower: int, 
                  Price: float, Color: 'Color', Mileage: int, ProductionYear: int,
                  FuelType: 'FuelType', Transmission: 'Transmission'):
-        self.__ID = ID
-        self.__Manufacturer = Manufacturer
-        self.__Model = Model
-        self.__HorsePower = HorsePower
-        self.__Price = Price
-        self.__Color = Color
-        self.__Mileage = Mileage
-        self.__ProductionYear = ProductionYear
-        self.__FuelType = FuelType
-        self.__Transmission = Transmission
+        # Private attributes for encapsulation
+        self.__ID = ID                            # Unique ID for the vehicle
+        self.__Manufacturer = Manufacturer        # Manufacturer of the vehicle (Enum)
+        self.__Model = Model                      # Model name of the vehicle
+        self.__HorsePower = HorsePower            # Horsepower of the vehicle
+        self.__Price = Price                      # Price of the vehicle
+        self.__Color = Color                      # Color of the vehicle (Enum)
+        self.__Mileage = Mileage                  # Mileage of the vehicle
+        self.__ProductionYear = ProductionYear    # Production year of the vehicle
+        self.__FuelType = FuelType                # Fuel type of the vehicle (Enum)
+        self.__Transmission = Transmission        # Transmission type of the vehicle (Enum)
 
-    # Getters
+    # Getter methods for accessing private attributes
     def get_ID(self) -> int:
         return self.__ID
 
@@ -46,7 +48,7 @@ class Vehicle:
     def get_Transmission(self) -> 'Transmission':
         return self.__Transmission
 
-    # Setters
+    # Setter methods for modifying private attributes
     def set_ID(self, ID: int):
         self.__ID = ID
 
@@ -77,6 +79,7 @@ class Vehicle:
     def set_Transmission(self, Transmission: 'Transmission'):
         self.__Transmission = Transmission
 
+# Enum class for vehicle manufacturers
 class Manufacturer(Enum):
     AUDI = 1
     BMW = 2
@@ -84,6 +87,7 @@ class Manufacturer(Enum):
     HONDA = 4
     SKODA = 5
 
+# Enum class for vehicle colors
 class Color(Enum):
     BLACK = 1
     WHITE = 2
@@ -93,10 +97,12 @@ class Color(Enum):
     BLUE = 6
     BROWN = 7
 
+# Enum class for fuel types
 class FuelType(Enum):
-    GASOLINE  = 1
-    DIESEL_FUEL = 2
-      
+    GASOLINE = 1        # Gasoline fuel type
+    DIESEL_FUEL = 2     # Diesel fuel type
+
+# Enum class for transmission types
 class Transmission(Enum):
-    AUTOMATIC = 1
-    MANUAL = 2
+    AUTOMATIC = 1       # Automatic transmission
+    MANUAL = 2          # Manual transmission
